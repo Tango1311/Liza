@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Историческая игра: Россия</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Историческая игра: Россия</h1>
+            <p class="subtitle">Проверьте свои знания важных дат в истории России</p>
+        </header>
+        
+        <div class="game-container">
+            <div class="game-info">
+                <div class="info-item">
+                    <div class="info-label">ВОПРОС</div>
+                    <div id="questionCount" class="info-value">0/10</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">СЧЕТ</div>
+                    <div id="score" class="info-value">0</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">РЕЖИМ</div>
+                    <div id="mode" class="info-value">Дата → Событие</div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <div id="question" class="question-text">
+                    Нажмите "Начать игру", чтобы проверить свои знания истории России!
+                </div>
+                
+                <!-- Контейнер для вариантов ответов (режимы 1 и 2) -->
+                <div id="options" class="options-container hidden">
+                    <!-- Опции будут созданы динамически -->
+                </div>
+                
+                <!-- Контейнер для ввода года (режим 3) -->
+                <div id="inputContainer" class="input-container hidden">
+                    <div id="yearInputGroup" class="year-input-group">
+                        <div class="year-input">
+                            <input type="number" id="yearFrom" placeholder="Начало">
+                            <span class="dash">—</span>
+                            <input type="number" id="yearTo" placeholder="Конец">
+                        </div>
+                        <div id="inputHint" class="input-hint">
+                            Для периода введите начальный и конечный год
+                        </div>
+                    </div>
+                    <input type="number" id="singleYearInput" class="single-year-input hidden" placeholder="Введите год">
+                    <button id="submitBtn" class="hidden">Ответить</button>
+                </div>
+                
+                <div class="controls">
+                    <button id="startBtn">Начать игру</button>
+                    <button id="nextBtn" class="hidden">Следующий вопрос</button>
+                    <button id="resetBtn" class="hidden">Начать заново</button>
+                    <button id="modeToggle">Сменить режим</button>
+                </div>
+                
+                <div id="result" class="result"></div>
+                <div id="modeIndicator" class="mode-indicator"></div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Как играть:</h3>
+                <p>В игре три режима:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>"Дата → Событие"</strong> - вам показывают год, и нужно выбрать соответствующее историческое событие из 6 вариантов.</li>
+                    <li><strong>"Событие → Дата"</strong> - вам показывают событие, и нужно выбрать правильный год из 6 вариантов.</li>
+                    <li><strong>"Событие → Ввод даты"</strong> - вам показывают событие, и нужно вручную ввести дату или период.</li>
+                </ul>
+                <p>Для периода вводите два года через дефис (например: 1019-1054). Каждый правильный ответ даёт 1 очко. Попробуйте ответить правильно на все 10 вопросов!</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Игра создана на основе важных дат в истории России с IV по XIX век</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
